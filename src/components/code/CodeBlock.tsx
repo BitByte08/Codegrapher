@@ -8,7 +8,7 @@ type CodeBlockProps = {
   code: string
 }
 
-export default function CodeBlock({ language, code }: CodeBlockProps) {
+const CodeBlock = ({ language, code }: CodeBlockProps) => {
   useEffect(() => {
     async function loadPrism() {
       try {
@@ -21,10 +21,12 @@ export default function CodeBlock({ language, code }: CodeBlockProps) {
     loadPrism()
   }, [language])
   return (
-    <pre className={`language-${language}`}>
+    <pre className={`language-${language} h-full w-full`}>
       <code className={`language-${language}`}>
         {code}
       </code>
     </pre>
   )
 }
+
+export default CodeBlock;
