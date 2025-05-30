@@ -1,4 +1,4 @@
-import CodeContainer from "@/components/code/CodeContainer";
+import CodeContainer from "@/components/containers/CodeContainer";
 
 
 const page = () => {

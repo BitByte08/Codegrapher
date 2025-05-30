@@ -1,32 +1,10 @@
-'use client'
-import 'prismjs/themes/prism-tomorrow.css'
-import { useEffect } from 'react'
-import Prism from 'prismjs'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-type CodeBlockProps = {
-  language: string
-  code: string
-}
-
-const CodeBlock = ({ language, code }: CodeBlockProps) => {
-  useEffect(() => {
-    async function loadPrism() {
-      try {
-        await import(`prismjs/components/prism-${language}`)
-        Prism.highlightAll()
-      } catch (e) {
-        console.error('Prism load failed:', e)
-      }
-    }
-    loadPrism()
-  }, [language])
+export default function CodeBlock({ code, language }: { code: string; language: string }) {
   return (
-    <pre className={`language-${language} h-full w-full`}>
-      <code className={`language-${language}`}>
-        {code}
-      </code>
-    </pre>
+    <SyntaxHighlighter language={language} style={oneDark} className={"font"}>
+      {code}
+    </SyntaxHighlighter>
   )
 }
-
-export default CodeBlock;
