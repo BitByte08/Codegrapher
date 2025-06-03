@@ -1,6 +1,6 @@
 'use client'
 import {useParams} from "next/navigation";
-import MainContainer from "@/components/containers/MainContainer";
+import MainContainer from "@/containers/main/MainContainer";
 
 const Page = () => {
   const params = useParams();

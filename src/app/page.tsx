@@ -1,6 +1,6 @@
 import Image from "next/image";
-import CodeContainer from "@/components/containers/CodeContainer";
-import MainContainer from "@/components/containers/MainContainer";
+import CodeContainer from "@/containers/main/CodeContainer";
+import MainContainer from "@/containers/main/MainContainer";
 export default function Home() {
   return (
     <MainContainer>
